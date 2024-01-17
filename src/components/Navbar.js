@@ -1,6 +1,6 @@
 import React,{ Component } from "react"
 // import PropsTypes from 'prop-types'
-
+import { Link } from "react-router-dom"
 export class Navbar extends Component{
 
   static propsTypes = {
@@ -13,16 +13,21 @@ export class Navbar extends Component{
       <div>
          <ul className="nav justify-content-end">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="/">Active</a>
+            <Link className="nav-link active" aria-current="page" to="/business">business</Link>
+          </li>
+          
+            <Link className="nav-link active" aria-current="page" to="/general">general</Link>
+
+            <Link className="nav-link active" aria-current="page" to="/entertainment">entertainment</Link>
+
+          <li className="nav-item">
+            {/* <link className="nav-link" to="/news">news</link> */}
           </li>
           <li className="nav-item">
-            {/* <link className="nav-link" href="/news">news</link> */}
+            <Link className="nav-link" to="/">Link</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">Link</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link disabled">Disabled</a>
+            <Link className="nav-link disabled">Disabled</Link>
           </li>
         </ul>
       </div>
