@@ -24,7 +24,7 @@ export class News  extends Component {
 
 handlePreviousClick= async ()=>{
   console.log("previous")
-  let url = `https://newsapi.org/v2/everything?q=apple&from=2024-01-15&to=2024-01-15&sortBy=popularity&apiKey=d38c5b1136e345db8716fcc0a1eb634f&page=${this.state.page -1}`;
+  let url = `https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=d38c5b1136e345db8716fcc0a1eb634f&page=${this.state.page -1}&pageSize=10`;
   let data = await fetch(url);
   let parsedata = await data.json()
   this.setState({
@@ -37,7 +37,7 @@ handlePreviousClick= async ()=>{
 
 handleNextClick= async()=>{
   console.log("Next")
-  let url = `https://newsapi.org/v2/everything?q=apple&from=2024-01-15&to=2024-01-15&sortBy=popularity&apiKey=d38c5b1136e345db8716fcc0a1eb634f&page=${this.state.page +1}`;
+  let url = `https://newsapi.org/v2/everything?q=apple&from=2024-01-15&to=2024-01-15&sortBy=popularity&apiKey=d38c5b1136e345db8716fcc0a1eb634f&page=${this.state.page +1}&pageSize=10`;
   let data = await fetch(url);
   let parsedata = await data.json()
   this.setState({
